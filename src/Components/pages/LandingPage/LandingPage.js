@@ -8,11 +8,13 @@ import {
   BackgroundImage,
   AnimatedText
 } from './LandingPage.styles';
+import Navbar from '../../Common/Navbar';
 
 
 export const LandingPage = () => {
   return (
     <StyledLandingPage>
+      <Navbar/>
       <BackgroundImage />
       <Container fluid>
         <Row>

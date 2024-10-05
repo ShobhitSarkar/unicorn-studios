@@ -48,9 +48,10 @@ export const BackgroundImage = styled.div`
   right: 0;
   bottom: 0;
   width: 50%;
-  background-image: url('/images/background.jpeg');
-  background-size: cover;
-  background-position: center;
+  background-image: url('/images/eagle-background.jpg');
+  background-size: contain; // Changed from cover to contain
+  background-position: right center; // Adjusted to center vertically
+  background-repeat: no-repeat; // Prevent image from repeating
   clip-path: polygon(20% 0%, 100% 0%, 100% 100%, 0% 100%);
   opacity: 0.7;
   
@@ -58,6 +59,7 @@ export const BackgroundImage = styled.div`
     width: 100%;
     clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
     opacity: 0.3;
+    background-position: center; // Centered for mobile
   }
 `;
 

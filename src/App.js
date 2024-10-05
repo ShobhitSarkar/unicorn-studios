@@ -4,6 +4,7 @@ import { LandingPage } from './Components/pages/LandingPage/LandingPage';
 import Portfolio from './Components/pages/Portfolio/Portfolio';
 import About from './Components/pages/About/About';
 import Services from './Components/pages/Services/Services';
+import Contact from './Components/pages/Contact/Contact';
 import Navbar from './Components/Common/Navbar';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -19,7 +20,7 @@ function App() {
             <Route path="/portfolio" element={<Portfolio />} />
             <Route path="/about" element={<About />} />
             <Route path="/services" element={<Services />} />
-            {/* Add more routes for other pages as you create them */}
+            <Route path="/contact" element={<Contact />} />
           </Routes>
         </div>
       </div>

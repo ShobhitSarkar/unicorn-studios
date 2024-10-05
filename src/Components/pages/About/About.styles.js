@@ -22,7 +22,7 @@ const orbFloat = keyframes`
 `;
 
 export const AboutSection = styled.section`
-  background: #000000;
+  background: #000;
   color: #ffffff;
   padding: 120px 0;
   position: relative;

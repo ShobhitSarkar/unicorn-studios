@@ -21,7 +21,7 @@ export const LandingPage = () => {
           <Col md={6}>
             <Content>
               <Title>
-                <AnimatedText delay={0.4}>Unicorn</AnimatedText>{' '}
+                <AnimatedText delay={0.4}>Falcon</AnimatedText>{' '}
                 <AnimatedText delay={0.8}>Studios</AnimatedText>{' '}
               </Title>
               <Tagline>

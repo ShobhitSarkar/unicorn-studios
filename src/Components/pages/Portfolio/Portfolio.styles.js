@@ -1,4 +1,25 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
+
+const gradientAnimation = keyframes`
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+`;
+
+const orbFloat = keyframes`
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+`;
 
 export const PortfolioWrapper = styled.div`
   background-color: #000;
@@ -15,12 +36,14 @@ export const PortfolioWrapper = styled.div`
 `;
 
 export const PortfolioHeader = styled.h2`
-  font-size: 2.5rem;
-  text-align: center;
-  margin: 0 0 60px; // Removed top margin, kept bottom margin
-  padding: 0 20px; // Added horizontal padding
-  font-weight: 300;
-  letter-spacing: 2px;
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    background: linear-gradient(90deg, #00FFFF, #FF00FF);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: ${gradientAnimation} 5s ease infinite;
+    background-size: 200% 200%;
 
   @media (max-width: 768px) {
     font-size: 2rem;

@@ -5,61 +5,74 @@ import {
   PortfolioHeader,
   ProjectGrid,
   ProjectCard,
-  ProjectImage,
-  ProjectInfo,
+  ProjectFront,
+  ProjectBack,
   ProjectTitle,
   ProjectDescription,
-  ProjectSummary,
-  HoverEffect
+  ProjectLink
 } from './Portfolio.styles';
 
 const projects = [
   {
     id: 1,
-    title: "AI-Powered Solutions",
-    summary: "Revolutionizing industries with artificial intelligence",
-    description: "Our AI solutions include cutting-edge analytics dashboards, predictive maintenance systems, and automated decision-making tools that drive efficiency and innovation across various sectors.",
-    image: "https://placehold.co/600x600/000000/00FFFF?text=AI+Solutions"
+    title: "AI Analytics Dashboard",
+    description: "A cutting-edge dashboard leveraging machine learning for real-time business insights.",
+    image: "https://placehold.co/600x600/001F3F/FFFFFF?text=AI+Dashboard",
+    link: "#"
   },
   {
     id: 2,
-    title: "Blockchain Technology",
-    summary: "Secure, transparent, and decentralized systems",
-    description: "We develop blockchain-based applications for supply chain management, secure voting systems, and decentralized finance, ensuring data integrity and trust in digital transactions.",
-    image: "https://placehold.co/600x600/000000/FF00FF?text=Blockchain+Tech"
+    title: "Blockchain Supply Chain",
+    description: "Revolutionizing supply chain management with transparent, immutable blockchain technology.",
+    image: "https://placehold.co/600x600/0074D9/FFFFFF?text=Blockchain+Supply",
+    link: "#"
   },
   {
     id: 3,
-    title: "XR Experiences",
-    summary: "Immersive VR and AR applications",
-    description: "Our extended reality (XR) experiences span from VR training simulators for high-risk industries to AR product visualization tools, pushing the boundaries of digital interaction and learning.",
-    image: "https://placehold.co/600x600/000000/FFFF00?text=XR+Experiences"
+    title: "VR Training Simulator",
+    description: "An immersive virtual reality platform for high-risk industry training scenarios.",
+    image: "https://placehold.co/600x600/7FDBFF/000000?text=VR+Simulator",
+    link: "#"
+  },
+  {
+    id: 4,
+    title: "IoT Smart City",
+    description: "Integrated IoT ecosystem for optimizing urban infrastructure and services.",
+    image: "https://placehold.co/600x600/39CCCC/000000?text=IoT+City",
+    link: "#"
+  },
+  {
+    id: 5,
+    title: "Quantum Encryption App",
+    description: "Next-gen mobile app utilizing quantum algorithms for unbreakable communication.",
+    image: "https://placehold.co/600x600/3D9970/FFFFFF?text=Quantum+App",
+    link: "#"
+  },
+  {
+    id: 6,
+    title: "AR Product Visualizer",
+    description: "Augmented reality tool for interactive 3D product demonstrations in e-commerce.",
+    image: "https://placehold.co/600x600/2ECC40/000000?text=AR+Visualizer",
+    link: "#"
   }
 ];
 
 const Portfolio = () => {
-  const [hoveredProject, setHoveredProject] = useState(null);
-
   return (
     <PortfolioWrapper>
-      <Container fluid>
-        <PortfolioHeader>Our Futuristic Portfolio</PortfolioHeader>
+      <Container>
+        <PortfolioHeader>Portfolio</PortfolioHeader>
         <ProjectGrid>
           {projects.map((project) => (
-            <ProjectCard
-              key={project.id}
-              onMouseEnter={() => setHoveredProject(project.id)}
-              onMouseLeave={() => setHoveredProject(null)}
-            >
-              <ProjectImage src={project.image} alt={project.title} />
-              <ProjectInfo isHovered={hoveredProject === project.id}>
+            <ProjectCard key={project.id}>
+              <ProjectFront style={{backgroundImage: `url(${project.image})`}} />
+              <ProjectBack>
                 <ProjectTitle>{project.title}</ProjectTitle>
-                <ProjectSummary>{project.summary}</ProjectSummary>
-                <ProjectDescription isHovered={hoveredProject === project.id}>
-                  {project.description}
-                </ProjectDescription>
-              </ProjectInfo>
-              <HoverEffect isHovered={hoveredProject === project.id} />
+                <ProjectDescription>{project.description}</ProjectDescription>
+                <ProjectLink href={project.link} target="_blank" rel="noopener noreferrer">
+                  Learn More
+                </ProjectLink>
+              </ProjectBack>
             </ProjectCard>
           ))}
         </ProjectGrid>

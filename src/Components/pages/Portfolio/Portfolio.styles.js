@@ -1,120 +1,138 @@
-// src/Components/pages/Portfolio/Portfolio.styles.js
-import styled, { keyframes } from 'styled-components';
-
-const glowAnimation = keyframes`
-  0% { box-shadow: 0 0 5px rgba(0, 255, 255, 0.5); }
-  50% { box-shadow: 0 0 20px rgba(0, 255, 255, 0.8), 0 0 30px rgba(0, 255, 255, 0.6); }
-  100% { box-shadow: 0 0 5px rgba(0, 255, 255, 0.5); }
-`;
+import styled from 'styled-components';
 
 export const PortfolioWrapper = styled.div`
   background-color: #000;
   color: #fff;
-  padding: 80px 0;
+  padding: 80px 0 60px; // Increased top padding
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; // Align content to the top
+
+  @media (max-width: 768px) {
+    padding: 60px 0 40px; // Adjusted padding for mobile
+  }
 `;
 
-export const PortfolioHeader = styled.h1`
-  font-size: 3rem;
+export const PortfolioHeader = styled.h2`
+  font-size: 2.5rem;
   text-align: center;
-  margin-bottom: 60px;
-  font-weight: 700;
+  margin: 0 0 60px; // Removed top margin, kept bottom margin
+  padding: 0 20px; // Added horizontal padding
+  font-weight: 300;
   letter-spacing: 2px;
-  text-transform: uppercase;
+
+  @media (max-width: 768px) {
+    font-size: 2rem;
+    margin-bottom: 40px;
+  }
 `;
 
 export const ProjectGrid = styled.div`
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
-  padding: 0 15px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 40px;
+  padding: 0 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
 
   @media (max-width: 1200px) {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   }
 
   @media (max-width: 768px) {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    padding: 0 15px;
   }
 `;
 
 export const ProjectCard = styled.div`
-  position: relative;
-  overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  aspect-ratio: 1 / 1;
+  background-color: transparent;
+  width: 100%;
+  height: 300px;
+  perspective: 1000px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 255, 255, 0.1);
+  transition: box-shadow 0.3s ease;
+
+  @media (max-width: 768px) {
+    height: 250px;
+  }
 
   &:hover {
-    transform: scale(1.02);
-    box-shadow: 0 0 30px rgba(0, 255, 255, 0.3);
+    box-shadow: 0 6px 12px rgba(0, 255, 255, 0.2);
+
+    .front {
+      transform: rotateY(180deg);
+    }
+    .back {
+      transform: rotateY(0deg);
+    }
   }
 `;
 
-export const ProjectImage = styled.img`
+const CardSide = styled.div`
+  position: absolute;
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  transition: filter 0.3s ease;
-`;
-
-export const ProjectInfo = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.8);
-  padding: 20px;
+  backface-visibility: hidden;
+  transition: transform 0.6s;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  text-align: center;
-  transition: background 0.3s ease;
+  padding: 20px;
+`;
 
-  ${props => props.isHovered && `
-    background: rgba(0, 0, 0, 0.95);
-  `}
+export const ProjectFront = styled(CardSide).attrs({ className: 'front' })`
+  background-size: cover;
+  background-position: center;
+`;
+
+export const ProjectBack = styled(CardSide).attrs({ className: 'back' })`
+  background-color: #111;
+  transform: rotateY(180deg);
+  text-align: center;
 `;
 
 export const ProjectTitle = styled.h3`
-  font-size: 2rem;
+  font-size: 1.5rem;
+  margin-bottom: 15px;
   color: #00FFFF;
-  margin-bottom: 10px;
-  font-weight: 700;
-  text-transform: uppercase;
-`;
 
-export const ProjectSummary = styled.p`
-  font-size: 1.2rem;
-  color: #fff;
-  margin-bottom: 20px;
+  @media (max-width: 768px) {
+    font-size: 1.3rem;
+  }
 `;
 
 export const ProjectDescription = styled.p`
   font-size: 1rem;
-  color: #fff;
-  line-height: 1.6;
-  opacity: 0;
-  max-height: 0;
-  overflow: hidden;
-  transition: opacity 0.3s ease, max-height 0.3s ease;
+  line-height: 1.5;
+  margin-bottom: 20px;
 
-  ${props => props.isHovered && `
-    opacity: 1;
-    max-height: 200px;
-  `}
+  @media (max-width: 768px) {
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
 `;
 
-export const HoverEffect = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(45deg, rgba(0, 255, 255, 0.1), rgba(255, 0, 255, 0.1));
-  opacity: ${props => props.isHovered ? 1 : 0};
-  transition: opacity 0.3s ease;
-  pointer-events: none;
-  animation: ${glowAnimation} 2s infinite;
+export const ProjectLink = styled.a`
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #00FFFF;
+  color: #000;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: #00CCCC;
+  }
+
+  @media (max-width: 768px) {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+  }
 `;

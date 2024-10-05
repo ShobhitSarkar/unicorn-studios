@@ -21,13 +21,13 @@ export const LandingPage = () => {
           <Col md={6}>
             <Content>
               <Title>
-                <AnimatedText delay={0.2}>Unicorn</AnimatedText>{' '}
-                <AnimatedText delay={0.4}>Studios</AnimatedText>{' '}
+                <AnimatedText delay={0.4}>Unicorn</AnimatedText>{' '}
+                <AnimatedText delay={0.8}>Studios</AnimatedText>{' '}
               </Title>
               <Tagline>
-                <AnimatedText delay={0.6}>Create.</AnimatedText>{' '}
-                <AnimatedText delay={0.8}>Transform.</AnimatedText>{' '}
-                <AnimatedText delay={1.0}>Elevate.</AnimatedText>{' '}
+                <AnimatedText delay={1.2}>Create.</AnimatedText>{' '}
+                <AnimatedText delay={1.6}>Transform.</AnimatedText>{' '}
+                <AnimatedText delay={2.0}>Elevate.</AnimatedText>{' '}
               </Tagline>
             </Content>
           </Col>

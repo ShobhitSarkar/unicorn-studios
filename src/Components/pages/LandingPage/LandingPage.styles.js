@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
 // Define some accent colors
-const accentColor1 = '#00FFFF'; // Cyan
-const accentColor2 = '#FF00FF'; // Magenta
+const accentColor1 = '#D4AF37'; // Cyan
+const accentColor2 = '#F5F5F5'; // Magenta
 
 export const LandingPage = styled.div`
   height: 100vh;

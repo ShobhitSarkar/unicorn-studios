@@ -13,6 +13,7 @@ import {
   ContactLink,
   ContactCardsWrapper
 } from './Contact.styles';
+import AnimatedSection from '../../Common/AnimatedSection';
 
 const Contact = () => {
   useEffect(() => {
@@ -35,6 +36,7 @@ const Contact = () => {
 
   return (
     <ContactSection>
+      <AnimatedSection>
       <Container>
         <ContactTitle>Get in Touch</ContactTitle>
         <ContactSubtitle>
@@ -67,6 +69,7 @@ const Contact = () => {
           </Col>
         </Row>
       </Container>
+      </AnimatedSection>
     </ContactSection>
   );
 };

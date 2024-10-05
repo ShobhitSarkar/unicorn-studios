@@ -8,7 +8,7 @@ const gradientAnimation = keyframes`
 
 export const ContactSection = styled.section`
   background-color: #000000;
-  color: #ffffff;
+  color: #F5F5F5;
   padding: 120px 0;
   min-height: 100vh;
 `;
@@ -17,7 +17,7 @@ export const ContactTitle = styled.h2`
   font-size: 3.5rem;
   margin-bottom: 1.5rem;
   text-align: center;
-  background: linear-gradient(90deg, #00FFFF, #FF00FF);
+  background: linear-gradient(90deg, #D4AF37, #1C2F4A);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: ${gradientAnimation} 5s ease infinite;
@@ -30,33 +30,33 @@ export const ContactSubtitle = styled.p`
   max-width: 800px;
   margin: 0 auto 4rem;
   text-align: center;
-  color: #cccccc;
+  color: #D3D3D3;
 `;
 
 export const CalendlyWrapper = styled.div`
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(28, 47, 74, 0.1);
   border-radius: 10px;
   padding: 20px;
   height: 100%;
-  box-shadow: 0 4px 6px rgba(0, 255, 255, 0.1);
+  box-shadow: 0 4px 6px rgba(212, 175, 55, 0.1);
 `;
 
 export const ContactInfo = styled.div`
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(28, 47, 74, 0.1);
   border-radius: 10px;
   padding: 40px;
   height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  box-shadow: 0 4px 6px rgba(255, 0, 255, 0.1);
+  box-shadow: 0 4px 6px rgba(212, 175, 55, 0.1);
 `;
 
 export const ConnectTitle = styled.h3`
   font-size: 2rem;
   margin-bottom: 2rem;
   text-align: center;
-  color: #ffffff;
+  color: #F5F5F5;
 `;
 
 export const ContactCardsWrapper = styled.div`
@@ -67,7 +67,8 @@ export const ContactCardsWrapper = styled.div`
 `;
 
 export const ContactCard = styled.div`
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(28, 47, 74, 0.2);
+  border: 2px solid #D4AF37;
   border-radius: 10px;
   padding: 20px;
   display: flex;
@@ -78,24 +79,24 @@ export const ContactCard = styled.div`
 
   &:hover {
     transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(0, 255, 255, 0.2);
+    box-shadow: 0 5px 15px rgba(212, 175, 55, 0.2);
   }
 `;
 
 export const ContactIcon = styled.div`
   font-size: 2.5rem;
   margin-bottom: 15px;
-  color: #00FFFF;
+  color: #D4AF37;
 `;
 
 export const ContactLink = styled.a`
-  color: #ffffff;
+  color: #F5F5F5;
   text-decoration: none;
   font-size: 1.2rem;
   text-align: center;
   transition: color 0.3s ease;
 
   &:hover {
-    color: #FF00FF;
+    color: #D4AF37;
   }
 `;

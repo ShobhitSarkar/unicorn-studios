@@ -12,10 +12,12 @@ import {
   GlowingOrb
 } from './About.styles';
 import { FaRocket, FaLightbulb, FaCogs, FaChartLine } from 'react-icons/fa';
+import AnimatedSection from '../../Common/AnimatedSection';
 
 const About = () => {
   return (
     <AboutSection>
+      <AnimatedSection>
       <Container>
         <Row>
           <Col lg={8} className="mx-auto">
@@ -60,6 +62,7 @@ const About = () => {
           </Col>
         </Row>
       </Container>
+      </AnimatedSection>
       <GlowingOrb />
     </AboutSection>
   );

@@ -23,7 +23,7 @@ const orbFloat = keyframes`
 
 export const AboutSection = styled.section`
   background: #000;
-  color: #ffffff;
+  color: #F5F5F5;
   padding: 120px 0;
   position: relative;
   overflow: hidden;
@@ -37,7 +37,7 @@ export const AboutTitle = styled.h2`
   font-size: 3.5rem;
   margin-bottom: 1.5rem;
   text-align: center;
-  background: linear-gradient(90deg, #00FFFF, #FF00FF);
+  background: linear-gradient(90deg, #D4AF37, #1C2F4A);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: ${gradientAnimation} 5s ease infinite;
@@ -52,7 +52,7 @@ export const AboutContent = styled.p`
   max-width: 800px;
   margin-left: auto;
   margin-right: auto;
-  color: #cccccc;
+  color: #D3D3D3;
 `;
 
 export const FeatureGrid = styled.div`
@@ -63,6 +63,7 @@ export const FeatureGrid = styled.div`
 
 export const FeatureItem = styled.div`
   background: #111111;
+  border: 2px solid #D4AF37;
   border-radius: 10px;
   padding: 3rem 2rem;
   text-align: center;
@@ -74,25 +75,25 @@ export const FeatureItem = styled.div`
   
   &:hover {
     transform: translateY(-10px);
-    box-shadow: 0 10px 20px rgba(255, 255, 255, 0.1);
+    box-shadow: 0 10px 20px rgba(212, 175, 55, 0.2);
   }
 `;
 
 export const FeatureIcon = styled.div`
   font-size: 3rem;
   margin-bottom: 1.5rem;
-  color: #ffffff;
+  color: #D4AF37;
 `;
 
 export const FeatureTitle = styled.h3`
   font-size: 1.8rem;
   margin-bottom: 1.5rem;
-  color: #ffffff;
+  color: #F5F5F5;
 `;
 
 export const FeatureDescription = styled.p`
   font-size: 1.1rem;
-  color: #cccccc;
+  color: #D3D3D3;
 `;
 
 export const GlowingOrb = styled.div`
@@ -100,7 +101,7 @@ export const GlowingOrb = styled.div`
   width: 300px;
   height: 300px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(0,255,255,0.3) 0%, rgba(255,0,255,0.3) 100%);
+  background: radial-gradient(circle, rgba(212, 175, 55, 0.3) 0%, rgba(28, 47, 74, 0.3) 100%);
   filter: blur(50px);
   opacity: 0.5;
   top: -150px;

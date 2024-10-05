@@ -1,16 +1,19 @@
 import React from 'react';
-import { Container, Row, Col } from 'react-bootstrap';
+import { Container } from 'react-bootstrap';
 import {
   ServicesSection,
   ServiceTitle,
   ServiceSubtitle,
+  ServiceGrid,
   ServiceCard,
   ServiceIcon,
   ServiceName,
   ServiceDescription,
-  LearnMoreButton
+  LearnMoreButton,
+  GlowingOrb
 } from './Services.styles';
 import { FaGlobe, FaSearch, FaMobile } from 'react-icons/fa';
+import AnimatedSection from '../../Common/AnimatedSection';
 
 const services = [
   {
@@ -33,24 +36,25 @@ const services = [
 const Services = () => {
   return (
     <ServicesSection>
+      <AnimatedSection>
       <Container>
         <ServiceTitle>Our Services</ServiceTitle>
         <ServiceSubtitle>
           At Unicorn Studios, we offer a comprehensive suite of web development services designed to elevate your online presence. Our team of experts combines cutting-edge technology with creative innovation to deliver solutions that not only meet but exceed your expectations.
         </ServiceSubtitle>
-        <Row className="justify-content-center">
+        <ServiceGrid>
           {services.map((service, index) => (
-            <Col key={index} lg={4} md={6} sm={12}>
-              <ServiceCard>
-                <ServiceIcon>{service.icon}</ServiceIcon>
-                <ServiceName>{service.name}</ServiceName>
-                <ServiceDescription>{service.description}</ServiceDescription>
-                <LearnMoreButton>Learn More</LearnMoreButton>
-              </ServiceCard>
-            </Col>
+            <ServiceCard key={index}>
+              <ServiceIcon>{service.icon}</ServiceIcon>
+              <ServiceName>{service.name}</ServiceName>
+              <ServiceDescription>{service.description}</ServiceDescription>
+              <LearnMoreButton>Learn More</LearnMoreButton>
+            </ServiceCard>
           ))}
-        </Row>
+        </ServiceGrid>
       </Container>
+      </AnimatedSection>
+      <GlowingOrb />
     </ServicesSection>
   );
 };
